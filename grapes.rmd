@@ -1,0 +1,28 @@
+---
+title: "Grapes"
+author: "Adam Gossett"
+date: "April 5, 2018"
+output: html_document
+---
+```{r}
+grapes = read.csv("grapes1.csv")
+```
+```{r}
+plot(Yieldall~Year, data=grapes, type="l",ylab = "Total Grape Yield in Tons/Acre")
+```
+```{r}
+plot(Yieldwine~Year, data=grapes, type="l",ylab = "Wine Grape Yield in Tons/Acre")
+```
+
+```{r}
+plot(Yieldall~Year, data=grapes, type = "l", col="blue", ylab="Yield in Tons per Acre")
+lines(Yieldwine~Year, data = grapes, col="red")
+legend(x="topleft",y=NULL,legend=c("All","Wine"),col=c("blue","red"),pch=c(16,16),bty="n")
+```
+```{r}
+summary(grapes)
+```
+```{r}
+plot(Yieldwine~PDSI, data=grapes)
+```
+
